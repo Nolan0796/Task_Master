@@ -1,0 +1,31 @@
+body {
+    margin: auto;
+}
+
+    #header {
+        height: 130px;
+        background-color: rgb(28,150,197);
+        display: flex;
+        align-items: center;
+    }
+
+        #header img {
+            height: inherit; 
+            margin-left: 135px; 
+            display: inline-block
+        }
+
+        #header ul {
+            list-style: none;
+        }
+
+            #header li {
+                display: inline-block;
+            }
+
+    #body {
+        min-height: 909px;
+        background-image: url("/static/images/background.jpg");
+        background-size: cover;
+        opacity: 40%;
+    }

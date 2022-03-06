@@ -4,7 +4,7 @@ $('.header a').hover(function() {
     $(this).css('background-color', 'transparent').css('opacity', '100%').css('border-style', 'none')
 })
 
-$('.button-link').hover(function() {
+$('.button-link, .ls-box button').hover(function() {
     $(this).css('background-color', 'transparent').css('color', 'rgba(18,90,133,1)')
 }, function() {
     $(this).css('background-color', 'rgba(18,90,133,1)').css('color', 'whitesmoke')

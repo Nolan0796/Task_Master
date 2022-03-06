@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Task Manager Login</title>
+	<title>Task Manager Signup</title>
 	{% load static %}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{% static 'js/script.js' %}" async></script>
@@ -14,9 +14,21 @@
 	<div class="ls-background">
 		<div class="ls-box">
 			<img src="{% static 'images/task_master_logo.png' %}" alt="logo.jpg">
-			<h2>Welcome Back!</h2>
+			<h2>Let's get you signed up!</h2>
 			<form action="" method="">
 				{% csrf_token %}
+				<span class="ls-field">
+					<label for="first_name">First Name:</label>
+					<input type="text" name="first_name">
+				</span>
+				<span class="ls-field">
+					<label for="last_name">Last Name:</label>
+					<input type="text" name="last_name">
+				</span>
+				<span class="ls-field">
+					<label for="company">Company:</label>
+					<input type="text" name="company">
+				</span>
 				<span class="ls-field">
 					<label for="email">Email:</label>
 					<input type="text" name="email">
@@ -25,9 +37,14 @@
 					<label for="password">Password:</label>
 					<input type="password" name="password">
 				</span>
-				<button type="submit">Login</button>
+				<span class="ls-field">
+					<label for="confirm_password">Confirm Password:</label>
+					<input type="password" name="confirm_password">
+				</span>
+				<input type="hidden" name="9">
+				<button type="submit">Signup</button>
 			</form>
-			<p>No account? <a href="signup">Signup</a></p>
+			<p>Already have an account? <a href="login">Login</a></p>
 			<p>Go back <a href="/">Home</a></p>
 		</div>
 	</div>

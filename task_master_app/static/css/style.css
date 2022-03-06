@@ -25,7 +25,7 @@ body {
         .header img {
             height: inherit; 
             margin-left: 135px; 
-            display: inline-block
+            display: inline-block;
         }
 
         .header ul {
@@ -46,10 +46,10 @@ body {
                     border-radius: 1px;
                     text-shadow: 1px 1px 2px;
                     color: rgba(18,90,133,1);
+                    border-radius: 10px;
                 }
 
     #body {
-        min-height: 909px;
         background-image: url("/static/images/background.jpg");
         background-size: cover;
         opacity: 85%;
@@ -62,7 +62,9 @@ body {
         .home_images {
             height: 180px;
             width: 180px;
-            margin: 110px 40px -50px
+            margin: 110px 40px -50px;
+            background-color: white;
+            box-shadow: white 0px 0px 35px 22px;
         }
 
         #home-p {
@@ -90,5 +92,73 @@ body {
             padding: 9px;
             border-style: outset;
             margin-bottom: 25px;
+            border-radius: 10px;
         }
+
+/* Login & Signup Pages */
+
+.ls-background {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(0,34,36,1) 0%, rgba(18,90,133,1) 3%, rgba(27,141,188,1) 9%, rgba(28,150,197,1) 12%, rgba(20,169,214,1) 18%, rgba(0,212,255,1) 40%, rgba(0,212,255,1) 60%, rgba(20,169,214,1) 82%, rgba(28,150,197,1) 88%, rgba(27,141,188,1) 91%, rgba(18,90,133,1) 97%, rgba(0,34,36,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .ls-box {
+        min-height: 405px;
+        width: 450px;
+        background-image: url(/static/images/background.jpg);
+        background-size: cover;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: rgb(18 90 133) 0px 0px 85px 20px;
+        border-style: outset;
+    }
+
+        .ls-box img {
+            width: 70%;
+            margin-left: 10px;
+        }
+
+        .ls-field {
+            width: 365px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+            .ls-field label {
+                font-size: 22px;
+                background-color: white;
+                box-shadow: white 0px 0px 20px 7px
+            }
+
+            .ls-field input {
+                font-size: 16px;
+                border-radius: 10px;
+                padding: 4px;
+            }
+
+        .ls-box button {
+            display: block;
+            margin: 20px auto;
+            background-color: rgba(18,90,133,1);
+            color: whitesmoke;
+            font-size: 20px;
+            border-radius: 12px;
+            padding: 4px 20px;
+        }
+
+        .ls-box p {
+            margin: 5px;
+        }
+
+            .ls-box a {
+                color: rgba(18,90,133,1);
+            }
 

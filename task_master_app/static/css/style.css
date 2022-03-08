@@ -4,6 +4,9 @@
 
 body {
     margin: auto;
+    background-size: cover;
+    background-image: url("/static/images/background.jpg");
+    min-height: 100vh;
 }
 
     .header {
@@ -50,9 +53,6 @@ body {
                 }
 
     #body {
-        background-image: url("/static/images/background.jpg");
-        background-size: cover;
-        opacity: 85%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -74,8 +74,14 @@ body {
             padding: 5px
         }
 
-        .underline {
-            width: 410px;
+        #underline-top {
+            width: 520px;
+            height: 60px;
+            margin: -22px 0px 25px;
+        }
+
+        #underline-bottom {
+            width: 328px;
             height: 60px;
             margin: -22px 0px 25px;
         }
@@ -150,7 +156,7 @@ body {
             background-color: rgba(18,90,133,1);
             color: whitesmoke;
             font-size: 20px;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 4px 20px;
         }
 
@@ -162,3 +168,65 @@ body {
                 color: rgba(18,90,133,1);
             }
 
+/* Teams & Tasks Pages */
+
+.tt-img {
+    width: 50%;
+    height: 200px;
+    margin: 130px auto 0px;
+    border-style: outset;
+    border-radius: 10px;
+}
+
+.tt-header {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+    .tt-header h1{
+        font-size: 60px;
+    }
+
+    .tt-header a {
+        text-decoration: none;
+        background-color: rgba(18,90,133,1);
+        color: whitesmoke;
+        font-size: 20px;
+        padding: 9px;
+        border-style: outset;
+        border-radius: 10px;
+    }
+
+    .tasks-table {
+        border-style: outset;
+        width: 90%;
+        background-color: white;
+        border-collapse: collapse;
+        margin-bottom: 25px;
+    }
+
+        .tasks-table thead:first-child {
+            background-color: rgba(18,90,133,1);
+            display: table-caption;
+            border-style: outset;
+            color: whitesmoke;
+        }
+
+        .tasks-table tr:nth-child(2) {
+            border-top-style: outset;
+        }
+
+        .tasks-table tr:nth-child(even) {
+            background-color: rgb(52, 138, 187, .48)
+        }
+
+        .tasks-table th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+            .tasks-table thead th {
+                padding: 2px 15px;
+            }

@@ -13,7 +13,7 @@ def signupPage(request):
 
 def teams(request):
     # Matthew's part
-    pass
+    return render(request, 'teams.html')
 
 def tasks(request):
     return render(request, 'tasks-admin.html')
@@ -21,5 +21,3 @@ def tasks(request):
 def tasks_employee(request): 
     return render(request, 'tasks-employee.html')
     # This is a temporary function to load tasks-employee.html, when working on the backend of the project, we can make an "if" statement in previous function that says if user.permission_level == 1, display tasks-employees.html else if user.permission_level == 8 or 9, then display tasks-admin.html
-
-    

@@ -8,7 +8,9 @@ body {
     background-image: url("/static/images/background.jpg");
     min-height: 100vh;
 }
-
+.padding-top{
+    padding-top: 8rem;
+}
     .header {
         position: fixed;
         width: 100%;

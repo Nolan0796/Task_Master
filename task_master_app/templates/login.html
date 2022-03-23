@@ -15,7 +15,14 @@
 		<div class="ls-box">
 			<img src="{% static 'images/task_master_logo.png' %}" alt="logo.jpg">
 			<h2>Welcome Back!</h2>
-			<form action="" method="">
+			{% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                    {% endfor %}
+                </ul>
+            {% endif %}
+			<form action="process_login" method="POST">
 				{% csrf_token %}
 				<span class="ls-field">
 					<label for="email">Email:</label>

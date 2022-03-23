@@ -1,4 +1,8 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import *
+from . import *
+import bcrypt
 
 
 
@@ -8,8 +12,43 @@ def home(request):
 def loginPage(request):
     return render(request, 'login.html')
 
+def process_login(request):
+    errors = User.objects.login_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/login')
+    else:
+        user = User.objects.filter(email = request.POST['email'])
+        request.session['user_id'] = user[0].id
+        return redirect('/')
+
+def process_logout(request):
+    request.session.flush()
+    return redirect('/')
+
 def signupPage(request):
     return render(request, 'signup.html')
+
+def process_signup(request):
+    errors = User.objects.signup_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/signup')
+    else:
+        pw_hash = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt()).decode()
+        user = User.objects.create(
+            first_name = request.POST['first_name'],
+            last_name = request.POST['last_name'],
+            company = request.POST['company'],
+            permission_level = request.POST['permission_level'],
+            email = request.POST['email'],
+            password = pw_hash
+            )
+    request.session['user_id'] = user.id
+    return redirect('/')
+        
 
 def teams(request):
     # Matthew's part

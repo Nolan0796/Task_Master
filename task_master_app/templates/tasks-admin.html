@@ -18,10 +18,12 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="teams">Teams</a></li>
                 <li><a href="tasks">Tasks</a></li>
-                <li><a href="login">Login</a></li>
-                <li><a href="signup">Sign-Up</a></li>
-                {% if user in request.session %}
+                {% if 'user_id' in request.session %}
+                    <li class="logout_link"><a>Logout</a></li>
                     <li><a href="my_account">My Account</a></li>
+                {% else %}
+                    <li><a href="login">Login</a></li>
+                    <li><a href="signup">Sign-Up</a></li>
                 {% endif %}
             </ul>
         </div>

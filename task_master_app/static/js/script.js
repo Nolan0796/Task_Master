@@ -10,6 +10,12 @@ $('.button-link, .ls-box button').hover(function() {
     $(this).css('background-color', 'rgba(18,90,133,1)').css('color', 'whitesmoke')
 })
 
+$('.logout_link a').click(function() {
+    if (confirm("Are you sure you want to logout?") == true) {
+        window.location = "process_logout"
+    }
+})
+
 var nav = document.querySelector('.header');
 
 window.addEventListener('scroll', function() {

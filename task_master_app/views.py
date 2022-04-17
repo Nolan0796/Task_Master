@@ -10,7 +10,10 @@ def home(request):
     return render(request, 'home.html')
 
 def loginPage(request):
-    return render(request, 'login.html')
+    if 'user_id' in request.session:
+        return redirect('/')
+    else:
+        return render(request, 'login.html')
 
 def process_login(request):
     errors = User.objects.login_validator(request.POST)
@@ -28,7 +31,10 @@ def process_logout(request):
     return redirect('/')
 
 def signupPage(request):
-    return render(request, 'signup.html')
+    if 'user_id' in request.session:
+        return redirect('/')
+    else:
+        return render(request, 'signup.html')
 
 def process_signup(request):
     errors = User.objects.signup_validator(request.POST)
